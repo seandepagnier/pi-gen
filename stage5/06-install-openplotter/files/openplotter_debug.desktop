@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=OpenPlotter debugging
+Exec=lxterminal -e openplotter
+Icon=/home/pi/.config/openplotter/static/icons/openplotter_debug.ico
+StartupNotify=true
+Categories=OpenPlotter
+Terminal=false
+Type=Application
+Version=1.0
