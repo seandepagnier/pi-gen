@@ -7,5 +7,4 @@ on_chroot apt-key add - < files/grafana.gpg.key
 on_chroot apt-key add - < files/influxdb.gpg.key
 on_chroot << EOF
 apt-get update
-apt-get dist-upgrade -y
 EOF
