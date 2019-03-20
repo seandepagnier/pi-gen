@@ -1,0 +1,3 @@
+deb http://ppa.launchpad.net/opencpn/opencpn/ubuntu/ xenial main
+deb https://repos.influxdata.com/debian stretch stable
+deb https://packages.grafana.com/oss/deb stable main
