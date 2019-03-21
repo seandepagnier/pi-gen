@@ -4,5 +4,6 @@
   "pipedProviders": [],
   "security": {
     "strategy": "./tokensecurity"
-  }
+  },
+  "loggingDirectory": "/home/pi/Logs"
 }
