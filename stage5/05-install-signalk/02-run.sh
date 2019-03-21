@@ -45,6 +45,7 @@ sudo -u pi npm i @signalk/signalk-node-red
 sudo -u pi npm i @mxtommy/kip
 sudo -u pi npm i @signalk/simulatorplugin
 sudo -u pi npm i signalk-derived-data
+sudo -u pi npm i signalk-to-influxdb
 EOF
 
 #config sk plugins
