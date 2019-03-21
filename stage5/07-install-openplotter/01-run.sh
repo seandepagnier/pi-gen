@@ -45,6 +45,8 @@ install -m 644 -o 1000 -g 1000 files/openplotter_debug.desktop		"${ROOTFS_DIR}/h
 install -m 644 -o 1000 -g 1000 files/openplotter_help.desktop		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
 install -m 644 -o 1000 -g 1000 files/signalk.desktop		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
 install -m 644 -o 1000 -g 1000 files/signalk.ico		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
+install -m 644 -o 1000 -g 1000 files/desktop-items-0.conf		"${ROOTFS_DIR}/home/pi/.config/pcmanfm/LXDE-pi/"
+install -m 644 -o 1000 -g 1000 files/pcmanfm.conf		"${ROOTFS_DIR}/home/pi/.config/pcmanfm/LXDE-pi/"
 install -m 644 files/xygrib.desktop		"${ROOTFS_DIR}/usr/share/applications/"
 install -m 644 files/opencpn.desktop		"${ROOTFS_DIR}/usr/share/applications/"
 install -m 644 files/lxde-pi-applications.menu		"${ROOTFS_DIR}/etc/xdg/menus/"
