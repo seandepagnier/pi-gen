@@ -56,7 +56,7 @@ then
 	systemctl enable hostapd
 fi
 
-cd
+cd /home/pi/
 /bin/bash add_hostname_dot_local.sh
 rm -f add_hostname_dot_local.sh
 EOF
