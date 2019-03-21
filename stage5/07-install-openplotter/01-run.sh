@@ -17,7 +17,7 @@ fi
 cd /home/pi/compiling
 
 rm -rf kplex
-git clone https://github.com/sailoog/kplex
+git clone https://github.com/stripydog/kplex
 cd kplex
 make
 make install

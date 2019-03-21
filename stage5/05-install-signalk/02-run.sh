@@ -74,7 +74,7 @@ fi
 cd /home/pi/compiling
 
 rm -rf canboat
-git clone https://github.com/sailoog/canboat
+git clone https://github.com/canboat/canboat
 cd canboat
 make
 make install
