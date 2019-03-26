@@ -9,7 +9,7 @@ fi
 
 cd /home/pi/compiling
 rm -rf RTIMULib2
-git clone https://github.com/openplotter/RTIMULib2
+git clone --depth 1 https://github.com/openplotter/RTIMULib2
 cd RTIMULib2/Linux
 mkdir build
 cd build
@@ -25,12 +25,15 @@ python setup.py install
 cd /home/pi/compiling
 rm -rf pypilot
 rm -rf pypilot_data
-git clone https://github.com/pypilot/pypilot
-git clone https://github.com/pypilot/pypilot_data
+git clone --depth 1 https://github.com/pypilot/pypilot
+git clone --depth 1 https://github.com/pypilot/pypilot_data
 cp -rv pypilot_data/* pypilot
 cd pypilot
 python setup.py build
 python setup.py install
+
+cd scripts
+./update_systemd_openplotter.sh
 
 rm -rf /home/pi/compiling/
 EOF

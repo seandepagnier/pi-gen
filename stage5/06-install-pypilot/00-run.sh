@@ -1,5 +1,5 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-pip install pyglet ujson PyOpenGL PyWavefront
+pip install pyglet ujson pyudev PyOpenGL PyWavefront
 EOF

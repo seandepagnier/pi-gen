@@ -1,2 +1,2 @@
 cmake
-python-gps libpython-dev python-numpy python-scipy swig python-pil python-opengl
+python-gps libpython-dev python-numpy python-scipy swig python-pil python-opengl python-flask python-gevent-websocket
