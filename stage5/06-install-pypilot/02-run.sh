@@ -8,9 +8,14 @@ if [ ! -d compiling ]; then
 fi
 
 cd /home/pi/compiling
-rm -rf RTIMULib2
-git clone --depth 1 https://github.com/openplotter/RTIMULib2
-cd RTIMULib2/Linux
+
+rm -rf RTIMULib2-master
+rm -f master.zip
+
+wget "https://github.com/openplotter/RTIMULib2/archive/master.zip"
+unzip master.zip
+cd RTIMULib2-master/Linux
+
 mkdir build
 cd build
 cmake ..
@@ -23,12 +28,19 @@ python setup.py build
 python setup.py install
 
 cd /home/pi/compiling
-rm -rf pypilot
-rm -rf pypilot_data
-git clone --depth 1 https://github.com/pypilot/pypilot
-git clone --depth 1 https://github.com/pypilot/pypilot_data
-cp -rv pypilot_data/* pypilot
-cd pypilot
+
+rm -rf pypilot-master
+rm -rf pypilot_data-master
+rm -f master.zip
+rm -f master_data.zip
+
+wget "https://github.com/pypilot/pypilot/archive/master.zip"
+wget -O master_data.zip "https://github.com/pypilot/pypilot_data/archive/master.zip"
+unzip master.zip
+unzip master_data.zip
+cp -rv pypilot_data-master/* pypilot-master
+cd pypilot-master
+
 python setup.py build
 python setup.py install
 

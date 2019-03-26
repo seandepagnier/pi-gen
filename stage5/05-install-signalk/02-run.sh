@@ -73,9 +73,11 @@ if [ ! -d compiling ]; then
 fi
 cd /home/pi/compiling
 
-rm -rf canboat
-git clone https://github.com/canboat/canboat
-cd canboat
+rm -rf canboat-master
+rm -f master.zip
+wget "https://github.com/canboat/canboat/archive/master.zip"
+unzip master.zip
+cd canboat-master
 make
 make install
 
