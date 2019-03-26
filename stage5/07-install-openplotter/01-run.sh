@@ -14,11 +14,14 @@ cd /home/pi
 if [ ! -d compiling ]; then
 	mkdir compiling
 fi
-cd /home/pi/compiling
 
-rm -rf kplex
-git clone https://github.com/stripydog/kplex
-cd kplex
+cd /home/pi/compiling
+rm -rf kplex-master
+rm -f master.zip
+
+wget "https://github.com/stripydog/kplex/archive/master.zip"
+unzip master.zip
+cd kplex-master
 make
 make install
 
@@ -30,10 +33,14 @@ EOF
 on_chroot << EOF
 cd /home/pi/.config
 rm -rf openplotter
-git clone -b v2.x.x https://github.com/sailoog/openplotter openplotter
+rm -rf openplotter-2.x.x
+rm -f v2.x.x.zip
+wget "https://github.com/sailoog/openplotter/archive/v2.x.x.zip"
+unzip v2.x.x.zip
+mv openplotter-2.x.x openplotter
+rm -f v2.x.x.zip
 EOF
 chown -R 1000:1000 "${ROOTFS_DIR}/home/pi/.config/openplotter"
-rm -rf "${ROOTFS_DIR}/home/pi/.config/openplotter/.git/"
 chmod 775 "${ROOTFS_DIR}/home/pi/.config/openplotter/openplotter"
 chmod 775 "${ROOTFS_DIR}/home/pi/.config/openplotter/startup"
 echo "export PATH=$PATH:/home/pi/.config/openplotter" >> "${ROOTFS_DIR}/home/pi/.profile"
@@ -45,6 +52,8 @@ install -m 644 -o 1000 -g 1000 files/openplotter_debug.desktop		"${ROOTFS_DIR}/h
 install -m 644 -o 1000 -g 1000 files/openplotter_help.desktop		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
 install -m 644 -o 1000 -g 1000 files/signalk.desktop		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
 install -m 644 -o 1000 -g 1000 files/signalk.ico		"${ROOTFS_DIR}/home/pi/.local/share/applications/"
+install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.config/pcmanfm"
+install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.config/pcmanfm/LXDE-pi"
 install -m 644 -o 1000 -g 1000 files/desktop-items-0.conf		"${ROOTFS_DIR}/home/pi/.config/pcmanfm/LXDE-pi/"
 install -m 644 -o 1000 -g 1000 files/pcmanfm.conf		"${ROOTFS_DIR}/home/pi/.config/pcmanfm/LXDE-pi/"
 install -m 644 -o 1000 -g 1000 files/.gtk-bookmarks		"${ROOTFS_DIR}/home/pi/"
